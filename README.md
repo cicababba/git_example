@@ -2,7 +2,7 @@
 
 This is an easy express implementation of a backend
 
-###  INSTALLATION
+##  INSTALLATION
 
 1 - clone the project 
 2 - open a terminal in the root of the folder you just cloned\
