@@ -1,0 +1,611 @@
+{
+	"info": {
+		"_postman_id": "6f518751-8d7f-465e-877a-06e154db0eea",
+		"name": "Express_be",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"cicababba@gmail.com\",\n    \"password\":\"1234567893\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGOUT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RESTAURANT",
+			"item": [
+				{
+					"name": "ALL RESTAURANTS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/restaurant/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurant",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT RESTAURANT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"name\": \"Primo ristorante da eliminare\",\n        \"menu\":[\n            {\n                \"plate\":\"Piatto squisito\",\n                \"price\": 19\n            },\n            {\n                \"plate\":\"Un'altro piatto squisito\",\n                \"price\": 21\n            }\n        ],\n        \"photos\":[\n            \"base64_1\",\n            \"base64_2\",\n            \"base64_3\"\n        ]\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/restaurant/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurant",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE RESTAURANT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"name\": \"Primo ristorante modificato\",\n        \"menu\":[\n            {\n                \"plate\":\"Piatto squisito\",\n                \"price\": 19\n            },\n            {\n                \"plate\":\"Un'altro piatto squisito\",\n                \"price\": 21\n            }\n        ],\n        \"photos\":[\n            \"base64_1\",\n            \"base64_2\",\n            \"base64_3\"\n        ]\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/restaurant/?id=616c31488b6b23920b158f2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurant",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "616c31488b6b23920b158f2c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE RESTAURANT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/restaurant/?id=616c32a5ffbc4a25484d5ad0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurant",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "616c32a5ffbc4a25484d5ad0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET RESTAURANT BY NAME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/restaurant/?name=Primo ristorante modificato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurant",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Primo ristorante modificato"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "SIGNUP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"matteo.adduci94@gmail.com\",\n    \"password\": \"1234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CHANGE PASSWORD",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"616c3b68bed7a467783d5780\",\n    \"password\": \"abchskavdsadas\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RESERVE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"date\": \"Sun Oct 19 2020 18:29:44 GMT+0200 (CEST)\",\n        \"restaurantId\": \"616c31488b6b23920b158f2c\",\n        \"restaurantName\": \"Primo ristorante modificato\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/reserve?userId=616c4f11235288293a4e50c0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"reserve"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "616c4f11235288293a4e50c0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET RESERVATIONS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/reservations?userId=616c4f11235288293a4e50c0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"reservations"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "616c4f11235288293a4e50c0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "REVIEW",
+			"item": [
+				{
+					"name": "WRITE REVIEW",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"vote\":7,\n        \"content\": \"Si mangia bene, tutti cordiali, da eliminare peró\",\n        \"restaurantId\": \"616c31488b6b23920b158f2c\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/review/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL BY RESTAURANT",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/review/all?restaurantId=616c31488b6b23920b158f2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"all"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "616c31488b6b23920b158f2c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LAST BY RESTAURANT ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/review/last?restaurantId=616c31488b6b23920b158f2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"last"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "616c31488b6b23920b158f2c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE REVIEW",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/review/?id=616c48b761db5c020fb1f9bf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "616c48b761db5c020fb1f9bf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE REVIEW",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"vote\":7,\n        \"content\": \"Si mangia bene, tutti cordiali, sono stata modificata\",\n        \"restaurantId\": \"616c31488b6b23920b158f2c\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/review/?id=616c483f87f2b34e6bd0de10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "616c483f87f2b34e6bd0de10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET REVIEW AVG BY RESTAURANT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/review/avg?restaurantId=616c31488b6b23920b158f2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"avg"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "616c31488b6b23920b158f2c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "{{auth}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/review/?id=616c483f87f2b34e6bd0de10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "616c483f87f2b34e6bd0de10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "auth",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTZjMjUxMjc3NWY2OWIzZmFlMjc4MDkiLCJpYXQiOjE2MzQ0Nzk0NjYsImV4cCI6MTYzNDU2NTg2Nn0.QsFVDkwWVljEZiPSNgkuaDE-dT2ycRjREaP8xSX1p4Q"
+		}
+	]
+}
