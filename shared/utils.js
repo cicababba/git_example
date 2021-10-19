@@ -4,6 +4,7 @@ const sendErrorResponse = (httpCode, error, res) => {
 }
 
 const sendSuccessResponse = (httpCode, result, res) => {
+    console.log("sto cercando creare un conflitto")
     res.status(httpCode).send({status: "OK", result})
 }
 
