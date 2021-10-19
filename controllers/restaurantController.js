@@ -20,6 +20,10 @@ const getRestaurants = (req, res) => {
     })
 }
 
+const getRestaurantsTest = (req, res) => {
+   //ciao sono qui
+}
+
 const getByName = (req, res) => {
     const { name } = req.query
     restaurantService.getRestaurantByName(name).then(result => {

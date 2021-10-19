@@ -12,15 +12,16 @@ const dbURI = "mongodb+srv://root:root@minibackend.i5vcu.mongodb.net/expressBe?r
 
 mongoose.connect(dbURI).then(() => {
     console.log("Connection to database completed!")
-    app.listen(3000)
-    app.use(express.json())
-    app.use('/restaurant', restaurantRoutes)
-    app.use('/auth', authRoutes)
-    app.use('/user', userRoutes)
-    app.use('/review', reviewRoutes)
 }).catch(err => {
     console.error(`Something went wrong, cannot start the app, error: ${err}`)
 })
+
+app.listen(3000)
+app.use(express.json())
+app.use('/restaurant', restaurantRoutes)
+app.use('/auth', authRoutes)
+app.use('/user', userRoutes)
+app.use('/review', reviewRoutes)
 
 
 
