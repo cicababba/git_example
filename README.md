@@ -23,3 +23,6 @@ or you can register a new user.
 Once you have your credentials, use the `login` API to get a token.
 Once you have the token, you need to update the collection `auth` variable. After that you can start 
 to user all the protected APIs.
+
+
+SONO UN'ALTRA PERSONA CHE HA MODIFICATO IL FILE.
