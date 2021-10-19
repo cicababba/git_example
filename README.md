@@ -25,4 +25,4 @@ Once you have the token, you need to update the collection `auth` variable. Afte
 to user all the protected APIs.
 
 
-SONO UN'ALTRA PERSONA CHE HA MODIFICATO IL FILE.
+SONO IN DEVELOP
