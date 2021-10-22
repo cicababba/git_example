@@ -24,5 +24,4 @@ Once you have your credentials, use the `login` API to get a token.
 Once you have the token, you need to update the collection `auth` variable. After that you can start 
 to user all the protected APIs.
 
-
-LO MODIFICHIAMO
+LO ANDIAMO MODIFICARE
