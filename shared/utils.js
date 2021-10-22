@@ -13,11 +13,6 @@ const sendSuccessResponse = (httpCode, result, res) => {
     res.status(httpCode).send({status: "OK", result})
 }
 
-const testMethod = (httpCode, result, res) => {
-    console.log("sono un metodo di test")
-
-}
-
 module.exports = {
     sendErrorResponse,
     sendSuccessResponse
