@@ -1,4 +1,4 @@
-const reviewService = require("../services/reviewService")
+const reviewService = require("../routes/reviewService")
 
 const { sendErrorResponse, sendSuccessResponse } = require("../shared/utils")
 
