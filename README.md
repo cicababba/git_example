@@ -25,4 +25,4 @@ Once you have the token, you need to update the collection `auth` variable. Afte
 to user all the protected APIs.
 
 
-LO MODIFICHIAMO
+LO MODIFICO DA QUI, COME SE FOSSI UN ALTRO COLLEGA
