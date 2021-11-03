@@ -16,7 +16,10 @@ mongoose.connect(dbURI).then(() => {
     console.error(`Something went wrong, error: ${err}`)
 })
 
-app.listen(3000)
+app.listen(9999)
+// app.listen(3000)
+// app.listen(3000)
+// app.listen(3000)
 app.use(express.json())
 app.use('/restaurant', restaurantRoutes)
 app.use('/auth', authRoutes)
