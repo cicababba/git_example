@@ -11,7 +11,7 @@ const dbURI = "mongodb+srv://root:root@minibackend.i5vcu.mongodb.net/expressBe?r
 
 
 mongoose.connect(dbURI).then(() => {
-    console.log("Connection to database from MASTER!")
+    console.log("Connection to database from feature/modify_master!")
 }).catch(err => {
     console.error(`Something went wrong, error: ${err}`)
 })
